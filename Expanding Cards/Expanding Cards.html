@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="never" />
+    <title>Expanding Cards</title>
+    <link rel="stylesheet" href="./expanding.css" />
+  </head>
+  <body>
+    <div class="signature">十四练习</div>
+    <div class="container">
+      <div
+        :class="['card',item.isclicked?'active':'']"
+        v-for="(item,index) in cardsList"
+        :style="item.bgc"
+        @click.stop="click(index)"
+      >
+        <h3 class="title">{{item.title}}</h3>
+      </div>
+    </div>
+
+    <script src="../vue.js"></script>
+    <script src="./expanding.js"></script>
+  </body>
+</html>
